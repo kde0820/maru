@@ -3,18 +3,7 @@
   <head>
     <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/pay.css?version=2">
-     <script src="../js/pay.js" charset="utf-8"></script>
-     <!-- <script src="../jsjquery-3.2.1.min.js"></script>
-     <script type="text/javascript">
-     $(document).ready(function () {
-       //your code here
-       $('input[name=_selected_all_]').on('change', function(){
-         $('input[name=_selected_]').prop('checked', this.checked);
-       });
-
-       var arr = $('input[name=_selected_]:checked').serializeArray().map(function(item) { return item.value });
-     });
-     </script> -->
+     <script src="../js/pay.js?version=4" charset="utf-8"></script>
   </head>
   <body>
     <div class="title">
@@ -22,43 +11,40 @@
     </div>
     <div class="btn_both">
       <div class="fl">
-        <button type="button" id="goBackButton">뒤로 가기</button>
+        <button type="button" id="goBackButton" onClick="history.go(0)">뒤로 가기</button>
       </div>
       <div class="fr">
-        <button type="button" id="cancleOrderButton">주문 취소</button>
+        <button type="button" id="cancleOrderButton" onClick="window.location.reload()">주문 취소</button>
       </div>
     </div>
 <table>
+  <tbody id="orderTable">
   <tr>
-    <th colspan="2">날짜</th>
-    <th colspan="2">주문번호</th>
-  </tr>
-  <tr>
-    <td style="width: 5%;"><input type="checkbox" name="_selected_all_"></td>
+    <td style="width: 5%;"><input type="checkbox" onclick="selectAll(event.target)"></td>
     <th>상품명</th>
     <th>수량</th>
     <th>가격</th>
   </tr>
-  <tr>
-    <td style="width: 5%;"><input type="checkbox" name="_selected_" value="ROW_1"></td>
+  <tr class = "row">
+    <td style="width: 5%;"><input type="checkbox" name="item" value="1"></td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td style="width: 5%;"><input type="checkbox" name="_selected_" value="ROW_2"></td>
-    <td>2</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td style="width: 5%;"><input type="checkbox" name="_selected_" value="ROW_3"></td>
+  <tr class = "row">
+    <td style="width: 5%;"><input type="checkbox" name="item" value="2"></td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
-  <tr>
-    <td style="width: 5%;"><input type="checkbox" name="_selected_" value="ROW_4"></td>
+  <tr class = "row">
+    <td style="width: 5%;"><input type="checkbox" name="item" value="3"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class = "row">
+    <td style="width: 5%;"><input type="checkbox" name="item" value="4"></td>
     <td></td>
     <td></td>
     <td></td>
@@ -75,11 +61,12 @@
     <th colspan="2">최종 금액</th>
     <th colspan="2"></th>
   </tr>
+</tbody>
 </table>
 
 <div class="btn_both">
   <div class="fl">
-    <button type="button" id="deleteGoodButton">물품 삭제</button>
+    <button type="button" id="deleteGoodButton" onclick="deleteGood()">물품 삭제</button>
   </div>
   <div class="fr">
       <button type="button" id="payButton">결제</button>
