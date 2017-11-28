@@ -32,8 +32,9 @@ td:nth-child(2){
 
 #box{
     background-color: #f3f3f3;
-    width: 60%;
+    width: 50%;
     height: 500px;
+    padding-top: 100px;
     margin: 100px auto;
 }
 
@@ -49,40 +50,23 @@ p{
     /*margin: 0 auto;*/
     display: table-cell;
     text-align: center;
-
 }
 
-/* GENERAL BUTTON STYLING */
-button,
-button::after {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+button{
+  border:none;
+  height:40px;
+  padding:0 2em;
+  cursor:pointer;
+  outline:none;
+  border-radius: 5px;
+  background-color: #96c3c3;
+  color: white;
+  box-shadow: 2px 2px 1px 1px #B4B4B4;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0 10px;
 }
-
-button {
-    background: none;
-    border: 3px solid #7bacff;
-    border-radius: 5px;
-    color: #444652;
-    display: block;
-    font-size: 1.2em;
-    font-weight: bold;
-    /* margin: 1em auto;*/
-    /*padding: 2em 6em;*/
-    position: relative;
-    text-transform: uppercase;
-}
-
-button::before,
-button::after {
-    background: #d0f3ff;
-    content: '';
-    position: absolute;
-    z-index: -1;
-}
-
-button:hover {
-    color: rgb(235, 121, 183);
+button:hover{
+  background-color: #5da2a2;
+  color: white;
 }
