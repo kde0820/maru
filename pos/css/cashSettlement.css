@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+*{
+  font-family: 'Nanum Gothic', serif !important;
+}
+html, head, body{
+    margin: 0;
+}
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    font-weight: bold;
+}
+td{
+
+}
+td:nth-child(1){
+    background-color: #444652;
+    color: #f3f3f3;
+    padding: 0.5em 1em;
+    font-weight: bold;
+}
+
+td:nth-child(2){
+    background-color: snow;
+    padding: 0.5em 3em;
+}
+
+#box{
+    background-color: #f3f3f3;
+    width: 60%;
+    height: 500px;
+    margin: 100px auto;
+}
+
+p{
+    text-align: center;
+}
+.buttonAlign{
+    margin: 2em auto;
+    text-align: center;
+}
+
+.buttonAlign > button{
+    /*margin: 0 auto;*/
+    display: table-cell;
+    text-align: center;
+
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button {
+    background: none;
+    border: 3px solid #7bacff;
+    border-radius: 5px;
+    color: #444652;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    /* margin: 1em auto;*/
+    /*padding: 2em 6em;*/
+    position: relative;
+    text-transform: uppercase;
+}
+
+button::before,
+button::after {
+    background: #d0f3ff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+button:hover {
+    color: rgb(235, 121, 183);
+}
