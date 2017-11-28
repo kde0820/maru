@@ -1,3 +1,16 @@
+<?php
+    $host = 'localhost';
+    $user = 'root';
+    $pw = 'daeunroot1';
+    $dbName = 'pos';
+    $mysql = mysqli_connect($host, $user, $pw, $dbName);
+    if(mysqli_connect_errno()){
+      echo "DB 연결 실패 ". mysqli_connect_error();
+    }
+    mysqli_query($mysql, "set session character_set_connection=utf8;");
+    mysqli_query($mysql, "set session character_set_results=utf8;");
+    mysqli_query($mysql, "set session character_set_client=utf8;");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,12 +36,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <b>현금 잔고: <p id="cash" onchange="showCashBalance()">500000원</p></b>
-                    </td>
-                    <td>
-                        <b>매출: <p id="sales" onchange="showSalesBalance()">500000원</p> </b>
-                    </td>
+                   <?php
+                            $sql = "select * from balance";
+                            $balances = mysqli_query($mysql, $sql);
+                            $balancedata = mysqli_fetch_array($balances);
+
+                            $row = mysqli_fetch_array($result);
+                            echo "
+                             <td><b>현금 잔고:<p id='cash' onchange='showCashBalance()'>$balancedata[cash]</p></b></td>
+                             <td><b>매출:<p id='sales' onchange='showSalesBalance()'>$balancedata[total]</p></b></td>
+                             ";
+
+                     ?>
                 </tr>
             </table>
         </div>
