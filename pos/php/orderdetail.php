@@ -48,7 +48,6 @@
               <td>$row[quantity]</td>
               <td>$goodsdetail[price]</td>
               <td>$total</td>
-
             ";
           }
         ?>

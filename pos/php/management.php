@@ -11,6 +11,7 @@
     mysqli_query($mysql, "set session character_set_results=utf8;");
     mysqli_query($mysql, "set session character_set_client=utf8;");
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
