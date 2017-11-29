@@ -38,15 +38,17 @@
                 </tr>
                 <tr>
                    <?php
-                   $sql = "select * from balance";
-                   $balances = mysqli_query($mysql, $sql);
-                             while($balancedata = mysqli_fetch_array($balances))
-                             {
-                               echo "
-                               <td><b>현금 잔고:<p id='cash' onchange='showCashBalance()'>$balancedata[cash]</p></b></td>
-                               <td><b>매출:<p id='sales' onchange='showSalesBalance()'>$balancedata[total]</p></b></td>
-                               ";
-                              }?>
+                            $sql = "select * from balance";
+                            $balances = mysqli_query($mysql, $sql);
+                            $balancedata = mysqli_fetch_array($balances);
+
+                            $row = mysqli_fetch_array($result);
+                            echo "
+                             <td><b>현금 잔고:<p id='cash' onchange='showCashBalance()'>$balancedata[cash]</p></b></td>
+                             <td><b>매출:<p id='sales' onchange='showSalesBalance()'>$balancedata[total]</p></b></td>
+                             ";
+
+                     ?>
                 </tr>
             </table>
         </div>
