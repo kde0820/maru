@@ -47,17 +47,27 @@
           {
             $pay = $row['payment'];
             echo "
-            <tr class='$row[oid]'>
-              <td><input type='checkbox' name='$row[oid]'></td>
-              <td>$row[oid]</td>
-              <td>$row[date]</td>
-              <td>$row[totalprice]</td>
-              <td>$payment[$pay]</td>
-              <td><button type='button' id='detail' onclick='opendetail(this)'>조회</button></td>
-            </tr>
+
+            <form>
+              <input type='hidden' value='$row[oid]' id='num'>
+              <input type='hidden' value='$row[date]' id='orderDate'>
+              <input type='hidden' value='$row[totalprice]' id='totalPrice'>
+              <input type='hidden' value='$payment[$pay]' id='payment'>
+              <tr class='$row[oid]'>
+                <td><input type='checkbox' name='$row[oid]'></td>
+                <td>$row[oid]</td>
+                <td>$row[date]</td>
+                <td>$row[totalprice]</td>
+                <td>$payment[$pay]</td>
+                <td><button type='button' id='detail' onclick='opendetail(this)'>조회</button></td>
+              </tr>
+            </form>
             ";
           }
         ?>
+        <form>
+          <input>
+        </form>
         <tbody>
       </table>
     </div>
