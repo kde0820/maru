@@ -1,6 +1,6 @@
 function opendetail(thisbutton) {
   var classvalue =  thisbutton.parentNode.parentNode.className;
-  window.open("orderdetail.php?orderid="+classvalue, "detail", "width=570, height=570");
+  window.open("orderdetail.php?orderid=" + classvalue, "detail", "width=570, height=570");
 }
 
 function setNum(name){
