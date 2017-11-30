@@ -1,9 +1,25 @@
+<?php
+    $host = 'localhost';
+    $user = 'root';
+    $pw = 'daeunroot1';
+    $dbName = 'pos';
+    $mysql = mysqli_connect($host, $user, $pw, $dbName);
+    if(mysqli_connect_errno()){
+      echo "DB 연결 실패 ". mysqli_connect_error();
+    }
+    mysqli_query($mysql, "set session character_set_connection=utf8;");
+    mysqli_query($mysql, "set session character_set_results=utf8;");
+    mysqli_query($mysql, "set session character_set_client=utf8;");
+
+    $sql = "select * from goods";
+    $result = mysqli_query($mysql, $sql);
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-     <link rel="stylesheet" type="text/css" href="../css/pay.css?version=2">
-     <script src="../js/pay.js?version=4" charset="utf-8"></script>
+     <link rel="stylesheet" type="text/css" href="../css/pay.css?version=4">
+     <script src="../js/pay.js?version=5" charset="utf-8"></script>
   </head>
   <body>
     <div class="title">
@@ -15,6 +31,9 @@
       </div>
       <div class="fr">
         <button type="button" id="cancleOrderButton" onClick="window.location.reload()">주문 취소</button>
+      </div>
+      <div class="fr">
+        <button type="button" id="adduserButton" onClick="openuser()">회원 추가</button>
       </div>
     </div>
 <table>

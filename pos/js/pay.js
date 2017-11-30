@@ -9,7 +9,6 @@ function selectAll(target){
   else{
     checkAll(item);
   }
-
 }
 
 function uncheckAll(item){
@@ -70,4 +69,9 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+// 회원 가입 창 띄우기
+function openuser() {
+  window.open("adduser.php", "detail", "width=570, height=300");
 }
