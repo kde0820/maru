@@ -79,11 +79,14 @@ function openuser() {
 
 // 상품 추가
 function addgood() {
-  var name = document.addgoods.goods.value;
+  var select = document.addgoods.goods;
+  var name = select.options[select.selectedIndex].text;
+  var price = select.value;
   var quantity = document.addgoods.quantity.value;
   var row = document.getElementsByClassName("row");
   var children = row[goodscount].childNodes;
   console.log(children);
   children[3].innerHTML = name;
   children[5].innerHTML = quantity;
+  children[7].innerHTML = price * quantity;
 }

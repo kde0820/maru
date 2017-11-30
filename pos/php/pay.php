@@ -35,7 +35,7 @@
             while ($row = mysqli_fetch_array($result))
             {
               echo "
-              <option value='$row[name]'>$row[name]</option>
+              <option value='$row[price]'>$row[name]</option>
               ";
             }
            ?>
