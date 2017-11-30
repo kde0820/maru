@@ -1,5 +1,6 @@
 var count = 4;
 var i=0;
+var goodscount = 0; // 추가된 상품의 갯수
 
 function selectAll(target){
   var item = document.getElementsByName("item");
@@ -74,4 +75,15 @@ window.onclick = function(event) {
 // 회원 가입 창 띄우기
 function openuser() {
   window.open("adduser.php", "detail", "width=570, height=300");
+}
+
+// 상품 추가
+function addgood() {
+  var name = document.addgoods.goods.value;
+  var quantity = document.addgoods.quantity.value;
+  var row = document.getElementsByClassName("row");
+  var children = row[goodscount].childNodes;
+  console.log(children);
+  children[3].innerHTML = name;
+  children[5].innerHTML = quantity;
 }
