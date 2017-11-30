@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/pay.css?version=4">
-     <script src="../js/pay.js?version=5" charset="utf-8"></script>
+     <script src="../js/pay.js?version=6" charset="utf-8"></script>
   </head>
   <body>
     <div class="title">
@@ -29,6 +29,22 @@
       <div class="fl">
         <button type="button" id="goBackButton" onClick="history.go(0)">뒤로 가기</button>
       </div>
+      <form name="addgoods" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+        <select name="goods">
+          <?php
+            while ($row = mysqli_fetch_array($result))
+            {
+              echo "
+              <option value='$row[name]'>$row[name]</option>
+              ";
+            }
+           ?>
+        </select>
+        <input type="number" name="quantity" min="1">
+        <div class="fl">
+          <button type="button" id="submitbutton" onClick="addgood()">상품추가</button>
+        </div>
+      </form>
       <div class="fr">
         <button type="button" id="cancleOrderButton" onClick="window.location.reload()">주문 취소</button>
       </div>
