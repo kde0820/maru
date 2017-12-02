@@ -100,4 +100,7 @@ function addgood() {
   // 총 금액 변경
   totalprice += Number(children[7].innerHTML);
   document.getElementById('totalprice').innerHTML = totalprice;
+  var category = select.options[select.selectedIndex].attributes[0].value;
+  if(category == 1)
+    alert("미성년자 구매 제한 품목입니다.\n신분증을 확인해주세요.");
 }

@@ -29,18 +29,21 @@
       <div class="fl">
         <button type="button" id="goBackButton" onClick="history.back()">뒤로 가기</button>
       </div>
+      <form name="nameform" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+        <input type="hidden" name="goodsname">
+      </form>
       <form name="addgoods" action="<?=$_SERVER['PHP_SELF']?>" method="post">
         <select name="goods">
           <?php
             while ($row = mysqli_fetch_array($result))
             {
               echo "
-              <option value='$row[price]'>$row[name]</option>
+              <option goods-category= '$row[category]' value='$row[price]'>$row[name]</option>
               ";
             }
            ?>
         </select>
-        <input type="number" name="quantity" min="1">
+        <input type="number" name="quantity" min="1" value="1">
         <div class="fl">
           <button type="button" id="submitbutton" onClick="addgood()">상품추가</button>
         </div>
