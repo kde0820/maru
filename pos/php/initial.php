@@ -19,8 +19,8 @@
   <body>
     <div class="container">
       <h1>편의점 POS 시스템</h1>
-      <button type="button" name="button">관리</button>
-      <button type="button" name="button">결제</button>
+      <button type="button" name="button" onclick="location.href='management.php' ">관리</button>
+      <button type="button" name="button"  onclick="location.href='pay.php' ">결제</button>
     </div>
   </body>
 </html>

@@ -27,7 +27,7 @@
     </div>
     <div class="btn_both">
       <div class="fl">
-        <button type="button" id="goBackButton" onClick="history.go(0)">뒤로 가기</button>
+        <button type="button" id="goBackButton" onClick="history.back()">뒤로 가기</button>
       </div>
       <form name="addgoods" action="<?=$_SERVER['PHP_SELF']?>" method="post">
         <select name="goods">
@@ -35,7 +35,7 @@
             while ($row = mysqli_fetch_array($result))
             {
               echo "
-              <option value='$row[name]'>$row[name]</option>
+              <option value='$row[price]'>$row[name]</option>
               ";
             }
            ?>
@@ -86,7 +86,7 @@
   </tr>
   <tr>
     <th colspan="2">총 금액</th>
-    <th colspan="2"></th>
+    <th id="totalprice" colspan="2"></th>
   </tr>
   <tr>
     <th colspan="2">할인 금액<button id="pointUseButton" onclick="openmodal()">포인트 사용</button></th>
@@ -104,7 +104,7 @@
     <button type="button" id="deleteGoodButton" onclick="deleteGood()">물품 삭제</button>
   </div>
   <div class="fr">
-      <button type="button" id="payButton">결제</button>
+      <button type="button" id="payButton" onclick="location.href='selectpay.php'">결제</button>
   </div>
 </div>
 

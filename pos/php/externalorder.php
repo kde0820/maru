@@ -29,7 +29,7 @@
       </div>
       <div class="btn_both">
       	<div class="fl">
-      		<button type="button" id="back">뒤로 가기</button>
+      		<button type="button" id="back" onClick="history.back()">뒤로 가기</button>
       	</div>
       	<div class="fr">
       		<button type="button" id="cancle">주문 취소</button>
