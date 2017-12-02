@@ -19,8 +19,8 @@
   <body>
     <div class="container">
       <h1>결제수단 선택</h1>
-      <button type="button" name="button">현금</button>
-      <button type="button" name="button">카드</button>
+      <button type="button" name="button" onclick="location.href='cashSettlement.php'">현금</button>
+      <button type="button" name="button" onclick="location.href='cardSettlement.php'">카드</button>
     </div>
   </body>
 </html>

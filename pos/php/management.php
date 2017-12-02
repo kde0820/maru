@@ -25,15 +25,15 @@
         <div class="title">
           <h2>관리 페이지</h2>
         </div>
-        <div id="backBtn"><button class="btn-1">뒤로 가기 </button></div>
+        <div id="backBtn"><button class="btn-1" onClick="history.back()">뒤로 가기 </button></div>
         <div class="content">
             <table>
                 <tr>
                     <td>
-                        <button class="order">주문 목록</button>
+                        <button class="order" onclick="location.href='order.php'">주문 목록</button>
                     </td>
                     <td>
-                        <button class="order">외부 주문</button>
+                        <button class="order" onclick="location.href='externalorder.php'">외부 주문</button>
                     </td>
                 </tr>
                 <tr>

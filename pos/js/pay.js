@@ -1,6 +1,7 @@
 var count = 4;
 var i=0;
 var goodscount = 0; // 추가된 상품의 갯수
+var totalprice = 0; // 총 금액
 
 function selectAll(target){
   var item = document.getElementsByName("item");
@@ -40,6 +41,11 @@ function deleteGood(){
         parent.removeChild(row);
         console.log(parent);
         count-=1;
+        goodscount--;
+        var child = row.childNodes;
+        // 총금액 변경
+        totalprice -= Number(child[7].innerHTML);
+        document.getElementById('totalprice').innerHTML = totalprice;
       }
     }
   }
@@ -89,4 +95,9 @@ function addgood() {
   children[3].innerHTML = name;
   children[5].innerHTML = quantity;
   children[7].innerHTML = price * quantity;
+  goodscount++;
+
+  // 총 금액 변경
+  totalprice += Number(children[7].innerHTML);
+  document.getElementById('totalprice').innerHTML = totalprice;
 }
