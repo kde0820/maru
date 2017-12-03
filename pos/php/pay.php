@@ -1,9 +1,28 @@
+<?php
+    $host = 'localhost';
+    $user = 'root';
+    $pw = 'daeunroot1';
+    $dbName = 'pos';
+    $mysql = mysqli_connect($host, $user, $pw, $dbName);
+    if(mysqli_connect_errno()){
+      echo "DB 연결 실패 ". mysqli_connect_error();
+    }
+    $sql = "select * from user";
+    $result = mysqli_query($mysql, $sql);
+?>
 <!DOCTYPE html>
 <html>
-  <head>
+  <head> <base target="_self"/>
     <meta charset="utf-8">
      <link rel="stylesheet" type="text/css" href="../css/pay.css?version=2">
      <script src="../js/pay.js?version=4" charset="utf-8"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script>
+
+
+
+
+     </script>
   </head>
   <body>
     <div class="title">
@@ -54,7 +73,7 @@
     <th colspan="2"></th>
   </tr>
   <tr>
-    <th colspan="2">할인 금액<button id="pointUseButton" onclick="openmodal()">포인트 사용</button></th>
+    <th colspan="2">할인 금액<button id="pointUseButton" onclick="openPopUp()">포인트 사용</button></th>
     <th colspan="2"></th>
   </tr>
   <tr>
@@ -81,6 +100,57 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closemodal()">&times;</span>
+    <div>
+      <form method="post" name="searchForm" action="<?=$_SERVER['PHP_SELF']?>">
+        <input type="text" name="searchID" id="searchID">
+        <button type="button" onclick="search()">검색</button>
+        <script type="text/javascript">
+          function search(){
+            document.searchForm.submit();
+            <?php
+            $action = '';
+            if(isset($_POST['action']))
+             $action = $_POST['action'];
+
+            //폼이 입력되었을 때 처리부
+            if($action == 'form_submit') {
+              echo '<xmp>';
+              print_r($_POST);
+              echo '</xmp>';
+
+              exit;
+            }
+            ?>
+          }
+        </script>
+      </form>
+      <!-- <?php
+      $action = '';
+      if(isset($_POST['action'])){
+        $action = $_POST['action'];
+        echo '2';
+      }else{
+        echo 'error';
+      }
+      if($action == 'form_submit'){
+        echo '<xmp>';
+        print_r($_POST);
+        echo '</xmp>';
+        while ($row = mysqli_fetch_array($result))
+        {
+          $point = $row["point"];
+          $id = $row["id"];
+          if(array_key_exists('searchID', $_POST ) && $_POST['searchID']==$id){
+
+            // echo "
+            // <div>$row[point]</div>
+            // ";
+          }
+        }
+      }
+      ?> -->
+    </div>
+
     <p>
       <table>
         <tr>

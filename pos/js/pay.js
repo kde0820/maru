@@ -45,6 +45,9 @@ function deleteGood(){
   }
 }
 
+function openPopUp() {
+  window.open("search.php", "포인트 사용", "width=570, height=570");
+}
 // Get the modal
 // Get the button that opens the modal
 var btn = document.getElementById("pointUseButton");
